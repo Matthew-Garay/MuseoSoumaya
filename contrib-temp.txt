@@ -1,2 +1,4 @@
 ﻿Commit: feat: add galleries section page 
 
+Commit: fix: resolve image loading issue on mobile 
+
