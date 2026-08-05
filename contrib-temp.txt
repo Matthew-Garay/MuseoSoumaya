@@ -2,3 +2,5 @@
 
 Commit: fix: resolve image loading issue on mobile 
 
+Commit: docs: add museum collections documentation 
+
