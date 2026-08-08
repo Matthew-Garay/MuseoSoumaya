@@ -4,3 +4,5 @@ Commit: fix: resolve image loading issue on mobile
 
 Commit: docs: add museum collections documentation 
 
+Commit: chore: update .gitignore to exclude large video file 
+
