@@ -6,3 +6,5 @@ Commit: docs: add museum collections documentation
 
 Commit: chore: update .gitignore to exclude large video file 
 
+Commit: feat: add contact form with PHP mailer 
+
