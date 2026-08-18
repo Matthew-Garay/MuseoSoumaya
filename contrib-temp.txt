@@ -10,3 +10,5 @@ Commit: feat: add contact form with PHP mailer
 
 Commit: fix: resolve navigation menu overlap 
 
+Commit: docs: add setup guide in docs/ 
+
