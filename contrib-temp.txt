@@ -12,3 +12,5 @@ Commit: fix: resolve navigation menu overlap
 
 Commit: docs: add setup guide in docs/ 
 
+Commit: refactor: improve CSS organization 
+
