@@ -14,3 +14,5 @@ Commit: docs: add setup guide in docs/
 
 Commit: refactor: improve CSS organization 
 
+Commit: feat: add exhibitions page 
+
