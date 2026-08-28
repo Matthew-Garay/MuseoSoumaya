@@ -16,3 +16,5 @@ Commit: refactor: improve CSS organization
 
 Commit: feat: add exhibitions page 
 
+Commit: chore: update .env.example with API placeholders 
+
