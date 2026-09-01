@@ -18,3 +18,5 @@ Commit: feat: add exhibitions page
 
 Commit: chore: update .env.example with API placeholders 
 
+Commit: fix: resolve footer positioning issue 
+
