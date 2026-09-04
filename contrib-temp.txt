@@ -20,3 +20,5 @@ Commit: chore: update .env.example with API placeholders
 
 Commit: fix: resolve footer positioning issue 
 
+Commit: docs: add architecture decision records 
+
