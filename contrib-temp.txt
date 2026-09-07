@@ -22,3 +22,5 @@ Commit: fix: resolve footer positioning issue
 
 Commit: docs: add architecture decision records 
 
+Commit: feat: add virtual tours section 
+
