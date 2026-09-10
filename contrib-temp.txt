@@ -24,3 +24,5 @@ Commit: docs: add architecture decision records
 
 Commit: feat: add virtual tours section 
 
+Commit: chore: update Bootstrap CDN version 
+
