@@ -26,3 +26,5 @@ Commit: feat: add virtual tours section
 
 Commit: chore: update Bootstrap CDN version 
 
+Commit: fix: resolve image alt text accessibility 
+
