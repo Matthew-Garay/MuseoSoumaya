@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visor de Imagen con Texto (Tailwind CSS)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Puedes añadir estilos personalizados si Tailwind no cubre algo específico */
+      /* Por ejemplo, para el scrollbar personalizado o transiciones muy específicas */
+      .modal {
+        /* Asegura que el modal esté fijo */
+        position: fixed;
+        /* Flexbox para centrar contenido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* Asegura que ocupe toda la pantalla y esté por encima de todo */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        /* Fondo semi-transparente */
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Oculto por defecto */
+        display: none; /* Se mostrará con JavaScript */
+      }
+    </style>
+  </head>
+  <body
+    class="font-sans flex justify-center items-center min-h-screen bg-gray-100"
+  >
+    <img
+      src="Recursos/Vestibulo/david.jpeg"
+      alt="Imagen de ejemplo"
+      class="thumbnail w-40 h-auto cursor-pointer border-2 border-gray-300 rounded-lg transition-transform duration-300 hover:scale-105"
+      id="myThumbnail"
+    />
+
+    <div id="myModal" class="modal">
+      <span
+        class="close-button absolute top-5 right-10 text-white text-5xl font-bold cursor-pointer hover:text-gray-400"
+        >&times;</span
+      >
+
+      <div
+        class="modal-content bg-white m-5 p-5 rounded-xl shadow-lg flex flex-col md:flex-row items-center max-w-5xl max-h-[90vh] box-border"
+      >
+        <div
+          class="modal-image-container flex-1 flex justify-center items-center mb-5 md:mb-0 md:mr-5"
+        >
+          <img
+            class="modal-image max-w-full max-h-[80vh] h-auto rounded-lg"
+            id="modalImage"
+            src=""
+            alt="Imagen Ampliada"
+          />
+        </div>
+
+        <div
+          class="modal-text-container flex-1 md:pl-5 overflow-y-auto max-h-[80vh]"
+        >
+          <h2 id="modalTitle" class="text-2xl font-bold mb-2">
+            Título de la Imagen
+          </h2>
+          <p id="modalDescription" class="text-gray-700">
+            Este es un texto descriptivo que acompaña a la imagen. Puede ser tan
+            largo como sea necesario y se desplazará si excede la altura del
+            contenedor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Obtener elementos del DOM
+      const thumbnail = document.getElementById("myThumbnail");
+      const modal = document.getElementById("myModal");
+      const modalImage = document.getElementById("modalImage");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalDescription = document.getElementById("modalDescription");
+      const closeButton = document.querySelector(".close-button");
+
+      // Datos de la imagen y su texto
+      const imageData = {
+        src: "https://via.placeholder.com/800x600", // URL de la imagen ampliada
+        title: "Mi Imagen Increíble (Tailwind)",
+        description:
+          "Esta es una descripción detallada de la imagen que has hecho clic, ahora con estilos de Tailwind CSS. Aquí puedes poner información relevante, datos interesantes o cualquier texto que quieras mostrar junto a la imagen. Puedes usar párrafos, listas, o cualquier otro elemento HTML dentro de esta descripción.",
+      };
+
+      // Función para abrir el modal
+      thumbnail.addEventListener("click", () => {
+        modal.style.display = "flex"; // Usar 'flex' para centrar el contenido
+        modalImage.src = imageData.src;
+        modalTitle.textContent = imageData.title;
+        modalDescription.textContent = imageData.description;
+        // Para asegurar que el scroll del body no se mueva
+        document.body.style.overflow = "hidden";
+      });
+
+      // Función para cerrar el modal al hacer clic en el botón de cierre
+      closeButton.addEventListener("click", () => {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Restaura el scroll del body
+      });
+
+      // Función para cerrar el modal al hacer clic fuera del contenido del modal
+      window.addEventListener("click", (event) => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+          document.body.style.overflow = ""; // Restaura el scroll del body
+        }
+      });
+    </script>
+  </body>
+</html>
