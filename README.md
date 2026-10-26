@@ -1,42 +1,62 @@
-﻿# Museo Soumaya — Sitio Web
+# Museo Soumaya Sitio Web
 
-<p align="center">
-  <a href="https://github.com/Matthew-Garay/MuseoSoumaya/actions/workflows/ci.yml"><img src="https://github.com/Matthew-Garay/MuseoSoumaya/actions/workflows/ci.yml/badge.svg" alt="CI Status"/></a>
-  <a href="https://github.com/Matthew-Garay/MuseoSoumaya/security/dependabot"><img src="https://img.shields.io/badge/Dependabot-enabled-blue?style=flat-square&logo=github&labelColor=555555" alt="Dependabot"/></a>
-  <a href="https://github.com/Matthew-Garay/MuseoSoumaya/releases"><img src="https://img.shields.io/github/v/release/Matthew-Garay/MuseoSoumaya?style=flat-square&label=Release&labelColor=555555" alt="Release"/></a>
-</p>
+## A. Titulo del Proyecto y Resumen Ejecutivo
 
-Sitio web informativo del Museo Soumaya desarrollado con PHP 8.2. Incluye secciones de galerías, colecciones, exposiciones, quiénes somos, contacto y arte para todos.
+Museo Soumaya Sitio Web es un sitio web informativo desarrollado con PHP 8.2 que incluye secciones de galerias, colecciones, exposiciones, quienes somos, contacto y arte para todos. El problema que resuelve es la presentacion de contenido institucional del museo de forma estatica y navegable, sin requerimiento de base de datos. Su alcance tecnologico se limita a un sitio web de contenido estatico ejecutado en un servidor local Apache mediante XAMPP, utilizando PHP puro para la renderizacion de secciones.
 
----
+## B. Arquitectura del Sistema
 
-## Descripción
+El programa sigue una arquitectura Cliente-Servidor sencilla con PHP en el backend y HTML/CSS/JavaScript en el frontend. El flujo de datos comienza con la solicitud del visitante a traves del navegador, que llega al servidor Apache donde PHP procesa las secciones estaticas del sitio y devuelve el HTML renderizado al cliente. No existe base de datos ni capa de persistencia; todo el contenido se define directamente en los archivos PHP de cada seccion. No hay comunicacion entre modulos logicos complejos ni patrones de diseno arquitectonico mas alla de la separacion basica entre presentacion y logica de servidor.
 
-Sitio web informativo del Museo Soumaya con navegación entre secciones: galerías, colecciones, exposiciones, quiénes somos, contacto y arte para todos. Proyecto académico desarrollado con PHP puro sin base de datos, ideal para presentación de contenido estático.
+## C. Caracteristicas Tecnicas Clave
 
-## Stack tecnológico
+- Navegación entre secciones: galerias, colecciones, exposiciones, quienes somos, contacto y arte para todos.
+- Backend desarrollado con PHP 8.2 puro.
+- Frontend construido con HTML5, CSS3 y JavaScript.
+- Estilos mediante Bootstrap 5 y Tailwind CSS a traves de CDN.
+- Servidor local Apache ejecutado con XAMPP.
+- No utiliza base de datos ni persistencia de datos.
+- No emplea mecanismos de concurrencia, procesamiento en tiempo real o protocolos de red propios.
+- Seguridad limitada al ambito de ejecucion local del servidor web; no maneja autenticacion ni datos sensibles.
 
-- **Backend:** PHP 8.2
-- **Frontend:** HTML5, CSS3, JavaScript
-- **Estilos:** Bootstrap 5 (CDN), Tailwind CSS (CDN)
-- **Servidor local:** Apache (XAMPP)
+## D. Especificacion del Stack Tecnologico
 
-## Arquitectura del sistema
+| Categoria | Tecnologia / Librería |
+|-----------|----------------------|
+| Backend | PHP 8.2 |
+| Frontend | HTML5, CSS3, JavaScript |
+| Estilos | Bootstrap 5 (CDN), Tailwind CSS (CDN) |
+| Servidor local | Apache (XAMPP) |
 
-```mermaid
-graph TD
-    A[Visitante] --> B[Frontend: HTML / CSS / JS]
-    B --> C[Backend: PHP 8.2]
-    C --> D[Contenido estático: secciones PHP]
-    F[GitHub Actions CI/CD] --> C
-    G[Dependabot Security] --> C
-    
-    style A fill:#e1f5fe,stroke:#01579b
-    style B fill:#fff3e0,stroke:#e65100
-    style C fill:#e8f5e9,stroke:#1b5e20
-    style D fill:#f3e5f5,stroke:#4a148c
-    style F fill:#ffe0b2,stroke:#ef6c00
-    style G fill:#ffebee,stroke:#b71c1c
+## E. Guia de Instalacion, Configuracion y Despliegue
+
+### Requisitos previos del sistema
+
+- XAMPP instalado (incluye Apache y PHP).
+- Navegador web moderno.
+- Sistema operativo Windows, Linux o macOS.
+
+### Secuencia de comandos para clonacion e instalacion
+
+```bash
+git clone https://github.com/Matthew-Garay/MuseoSoumaya.git
 ```
 
----
+Copiar el contenido del repositorio al directorio raiz del servidor web (por ejemplo, htdocs de XAMPP).
+
+### Configuracion de variables de entorno
+
+Este proyecto no requiere archivo .env ni variables de entorno.
+
+### Comandos para ejecucion en entorno de Desarrollo
+
+Iniciar Apache y PHP mediante el panel de control de XAMPP y acceder a http://localhost/MuseoSoumaya desde el navegador.
+
+### Comandos para ejecucion en entorno de Produccion
+
+No aplica entorno de produccion separado; el sitio se despliega en un servidor web local con Apache y PHP.
+
+## F. Creditos de Autoría
+
+Desarrollado por: Matthew Ilveneff Garay Pérez
+Correo Electronico: 1911.garay.perez@gmail.com
